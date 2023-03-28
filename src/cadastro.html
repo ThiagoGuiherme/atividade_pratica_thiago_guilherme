@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro</title>
+</head>
+<body>
+	<h2>Cadastro</h2>
+	<form method="POST" action="salvar.php">
+		<label for="nome">Nome completo:</label><br>
+		<input type="text" id="nome" name="nome"><br>
+		<label for="usuario">Nome de usuário:</label><br>
+		<input type="text" id="usuario" name="usuario"><br>
+		<label for="senha">Senha:</label><br>
+		<input type="password" id="senha" name="senha"><br>
+		<label for="data_nascimento">Data de nascimento:</label><br>
+		<input type="date" id="data_nascimento" name="data_nascimento"><br>
+		<label for="genero">Gênero:</label><br>
+		<select id="genero" name="genero">
+			<option value="masculino">Masculino</option>
+			<option value="feminino">Feminino</option>
+			<option value="nao_binario">Não binário</option>
+		</select><br>
+		<label for="cidade">Cidade:</label><br>
+		<input type="text" id="cidade" name="cidade"><br>
+		<label for="uf">UF:</label><br>
+		<input type="text" id="uf" name="uf"><br>
+		<input type="submit" name="salvar" value="Salvar">
+		<input type="button" name="cancelar" value="Cancelar" onclick="window.location.href='index.php'">
+	</form>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Seja bem-vindo</title>
+</head>
+<body>
+	<h2>Seja bem-vindo!</h2>
+	<p>Obrigado por se cadastrar.</p>
+	<p>Seus dados foram salvos com sucesso:</p>
+	<ul>
+		<li><strong>Nome completo:</strong> <?php echo $_POST["nome"]; ?></li>
+		<li><strong>Nome de usuário:</strong> <?php echo $_POST["usuario"]; ?></li>
+		<li><strong>Data de nascimento:</strong> <?php echo $_POST["data_nascimento"]; ?></li>
+		<li><strong>Gênero:</strong> <?php echo $_POST["genero"]; ?></li>
+		<li><strong>Cidade:</strong> <?php echo $_POST["cidade"]; ?></li>
+		<li><strong>UF:</strong> <?php echo $_POST["uf"]; ?></li>
+	</ul>
+</body>
+</html>
